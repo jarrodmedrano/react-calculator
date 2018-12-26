@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import connect from "react-redux/es/connect/connect";
-import {updateDisplay} from "../actions";
 
 class Display extends Component {
   render() {
@@ -18,4 +17,4 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps, {updateDisplay})(Display);
+export default connect(mapStateToProps)(Display);

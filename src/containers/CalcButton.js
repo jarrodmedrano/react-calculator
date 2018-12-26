@@ -5,11 +5,11 @@ import {updateDisplay} from "../actions";
 class CalcButton extends Component {
 
   render() {
-    const { inputType, value } = this.props;
+    const { inputType, value, updateDisplay } = this.props;
 
     return (
       <div>
-        <button id={inputType} onClick={() => this.props.updateDisplay(inputType)} >{value}</button>
+        <button id={inputType} onClick={() => updateDisplay(value)} >{value}</button>
       </div>
     );
   }

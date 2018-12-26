@@ -1,14 +1,21 @@
 import React, {Component} from 'react';
+import connect from "react-redux/es/connect/connect";
+import {updateDisplay} from "../actions";
 
 class Display extends Component {
   render() {
-    const {inputs} = this.props;
     return (
       <div id="display">
-        {inputs}
+        {this.props.display}
       </div>
     );
   }
 }
 
-export default Display;
+const mapStateToProps = (state) => {
+  return {
+    display: state.display
+  }
+};
+
+export default connect(mapStateToProps, {updateDisplay})(Display);

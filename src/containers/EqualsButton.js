@@ -12,10 +12,7 @@ class EqualsButton extends Component {
 
     return (
       <div>
-        <button
-          id={inputType}
-          onClick={() => this.handleClick(value, inputType)}
-        >
+        <button id={inputType} onClick={() => this.handleClick()}>
           {value}
         </button>
       </div>

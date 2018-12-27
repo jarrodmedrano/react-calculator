@@ -8,14 +8,11 @@ class ClearButton extends Component {
   };
 
   render() {
-    const { inputType, value, buttonType } = this.props;
+    const { inputType, value } = this.props;
 
     return (
       <div>
-        <button
-          id={inputType}
-          onClick={() => this.handleClick(value, inputType, buttonType)}
-        >
+        <button id={inputType} onClick={() => this.handleClick()}>
           {value}
         </button>
       </div>

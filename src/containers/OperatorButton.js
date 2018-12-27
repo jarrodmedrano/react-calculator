@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { inputOperator, replaceLastOperator } from "../actions";
 
 class OperatorButton extends Component {
-  handleClick = (inputValue, inputType) => {
+  handleClick = inputValue => {
     const reg = new RegExp("^([+\\-*/])$");
 
     if (!reg.test(this.props.pointer)) {

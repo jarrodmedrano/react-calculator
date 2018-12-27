@@ -3,11 +3,9 @@ import { connect } from "react-redux";
 import { inputDecimal } from "../actions";
 const reg = new RegExp("^([+\\-*/])$");
 class DecimalButton extends Component {
-  filterDecimals = input => {
-    return input.filter(item => {
-      return item === ".";
-    });
-  };
+  //map backwards from pointer until you find an operator
+  //split that chunk into an array
+  //filter that array and if there is a decimal don't put a new one in.
 
   mapBackwards = input => {
     const mapped = [...input].reverse().map((item, index) => {
@@ -35,15 +33,10 @@ class DecimalButton extends Component {
     return false;
   };
 
-  //map backwards from pointer until you find an operator
-  //split that chunk into an array
-  //filter that array and if there is a decimal don't put a new one in.
-
   handleClick = inputValue => {
     const { display, pointer } = this.props;
 
     if (pointer !== ".") {
-      // if (!this.filterDecimals(this.props.display).length) {
       if (this.mapBackwards(display) === true) {
       } else {
         this.props.inputDecimal(inputValue);

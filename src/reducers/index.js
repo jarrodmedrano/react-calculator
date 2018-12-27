@@ -10,7 +10,6 @@ const rootReducer = (state = initialState, action) => {
     case types.UPDATE_DISPLAY:
       return Object.assign({}, state, {
         display: state.display.concat(action.payload)
-        // pointer: state.display[state.display.length - 1]
       });
     case types.UPDATE_POINTER:
       return {
@@ -38,6 +37,10 @@ const rootReducer = (state = initialState, action) => {
         ...state
       };
     case types.INPUT_ZERO:
+      return {
+        ...state
+      };
+    case types.BUTTON_PRESS:
       return {
         ...state
       };

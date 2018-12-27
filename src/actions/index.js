@@ -55,9 +55,14 @@ export function multiply() {
   };
 }
 
-export function inputDecimal() {
-  return {
-    type: INPUT_DECIMAL
+export function inputDecimal(input) {
+  return dispatch => {
+    dispatch({
+      type: INPUT_DECIMAL,
+      payload: input
+    });
+    dispatch(updateDisplay(input));
+    dispatch(updatePointer(input));
   };
 }
 

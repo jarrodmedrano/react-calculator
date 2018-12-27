@@ -1,23 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { clear, updateDisplay, buttonPress } from "../actions";
+import { clear, updateDisplay, buttonPress, inputNumber } from "../actions";
 
 class ZeroButton extends Component {
-  handleClear = () => {
-    this.props.clear();
+  handleClick = inputValue => {
+    if (this.props.pointer !== 0 && this.props.display.length > 1) {
+      this.props.inputNumber(inputValue);
+    }
   };
-
-  handleClick = (inputValue, inputType, buttonType) => {};
 
   render() {
     const { inputType, value, buttonType } = this.props;
 
     return (
       <div>
-        <button
-          id={inputType}
-          onClick={() => this.handleClick(value, inputType, buttonType)}
-        >
+        <button id={inputType} onClick={() => this.handleClick(value)}>
           {value}
         </button>
       </div>
@@ -30,5 +27,5 @@ export default connect(
     pointer: state.pointer,
     display: state.display
   }),
-  { updateDisplay, clear, buttonPress }
+  { updateDisplay, clear, buttonPress, inputNumber }
 )(ZeroButton);

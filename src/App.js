@@ -4,6 +4,7 @@ import Display from "./containers/Display";
 import CalcButton from "./containers/CalcButton";
 import NumberButton from "./containers/NumberButton";
 import ClearButton from "./containers/ClearButton";
+import ZeroButton from "./containers/ZeroButton";
 
 class App extends Component {
   render() {
@@ -25,7 +26,7 @@ class App extends Component {
           <NumberButton inputType="one" value="1" buttonType="num" />
           <NumberButton inputType="two" value="2" buttonType="num" />
           <NumberButton inputType="three" value="3" buttonType="num" />
-          <NumberButton inputType="zero" value="0" />
+          <ZeroButton inputType="zero" value="0" />
           <CalcButton inputType="decimal" value="." />
           <CalcButton inputType="equals" value="=" />
         </div>

@@ -1,6 +1,6 @@
 import {
   ADD,
-  BUTTON_PRESS,
+  INPUT_OPERATOR,
   CLEAR,
   DIVIDE,
   EQUALS,
@@ -11,7 +11,8 @@ import {
   SUBTRACT,
   UPDATE_DISPLAY,
   REPLACE_FIRST_ZERO,
-  UPDATE_POINTER
+  UPDATE_POINTER,
+  REPLACE_LAST_OPERATOR
 } from "./types";
 
 export function updateDisplay(input) {
@@ -26,8 +27,7 @@ export function updateDisplay(input) {
 
 export function clear() {
   return {
-    type: CLEAR,
-    payload: []
+    type: CLEAR
   };
 }
 
@@ -105,9 +105,22 @@ export function replaceFirstZero(input) {
   };
 }
 
-export function buttonPress(input) {
-  return {
-    type: BUTTON_PRESS,
-    payload: input
+export function inputOperator(input) {
+  return dispatch => {
+    dispatch({
+      type: INPUT_OPERATOR,
+      payload: input
+    });
+    dispatch(updateDisplay(input));
+  };
+}
+
+export function replaceLastOperator(input) {
+  return dispatch => {
+    dispatch({
+      type: REPLACE_LAST_OPERATOR,
+      payload: input
+    });
+    dispatch(inputOperator(input));
   };
 }

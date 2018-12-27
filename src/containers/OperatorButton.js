@@ -2,19 +2,23 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { clear, updateDisplay, inputOperator } from "../actions";
 
-class ClearButton extends Component {
-  handleClick = () => {
-    this.props.clear();
+class OperatorButton extends Component {
+  handleClick = (inputValue, inputType) => {
+    const reg = new RegExp("^([+\\-x/])$");
+
+    if (!reg.test(this.props.pointer)) {
+      this.props.inputOperator(inputValue);
+    }
   };
 
   render() {
-    const { inputType, value, buttonType } = this.props;
+    const { inputType, value } = this.props;
 
     return (
       <div>
         <button
           id={inputType}
-          onClick={() => this.handleClick(value, inputType, buttonType)}
+          onClick={() => this.handleClick(value, inputType)}
         >
           {value}
         </button>
@@ -28,5 +32,5 @@ export default connect(
     pointer: state.pointer,
     display: state.display
   }),
-  { updateDisplay, clear, buttonPress: inputOperator }
-)(ClearButton);
+  { updateDisplay, clear, inputOperator }
+)(OperatorButton);

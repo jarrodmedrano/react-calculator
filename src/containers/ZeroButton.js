@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { clear, updateDisplay, buttonPress, inputNumber } from "../actions";
+import { clear, updateDisplay, inputOperator, inputNumber } from "../actions";
 
 class ZeroButton extends Component {
   handleClick = inputValue => {
@@ -27,5 +27,5 @@ export default connect(
     pointer: state.pointer,
     display: state.display
   }),
-  { updateDisplay, clear, buttonPress, inputNumber }
+  { updateDisplay, clear, buttonPress: inputOperator, inputNumber }
 )(ZeroButton);

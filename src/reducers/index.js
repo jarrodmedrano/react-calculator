@@ -16,6 +16,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         pointer: state.display[state.display.length - 1]
       };
+    case types.REPLACE_LAST_OPERATOR:
+      return {
+        ...state,
+        display: [...state.display.slice(state.display.length - 1)]
+      };
     case types.ADD:
       return {
         ...state
@@ -40,7 +45,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state
       };
-    case types.BUTTON_PRESS:
+    case types.INPUT_OPERATOR:
       return {
         ...state
       };

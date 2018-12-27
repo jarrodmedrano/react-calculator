@@ -19,7 +19,7 @@ const rootReducer = (state = initialState, action) => {
     case types.REPLACE_LAST_OPERATOR:
       return {
         ...state,
-        display: [...state.display.slice(state.display.length - 1)]
+        display: [...state.display.slice(0, -1)]
       };
     case types.ADD:
       return {

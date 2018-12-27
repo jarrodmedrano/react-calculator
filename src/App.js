@@ -6,6 +6,7 @@ import NumberButton from "./containers/NumberButton";
 import ClearButton from "./containers/ClearButton";
 import ZeroButton from "./containers/ZeroButton";
 import DecimalButton from "./containers/DecimalButton";
+import EqualsButton from "./containers/EqualsButton";
 
 class App extends Component {
   render() {
@@ -29,7 +30,7 @@ class App extends Component {
           <NumberButton inputType="three" value="3" />
           <ZeroButton inputType="zero" value="0" />
           <DecimalButton inputType="decimal" value="." />
-          <OperatorButton inputType="equals" value="=" />
+          <EqualsButton inputType="equals" value="=" />
         </div>
       </div>
     );

@@ -2,16 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { inputOperator, replaceLastOperator } from "../actions";
 
-class OperatorButton extends Component {
-  handleClick = (inputValue, inputType) => {
-    const reg = new RegExp("^([+\\-x/])$");
-
-    if (!reg.test(this.props.pointer)) {
-      this.props.inputOperator(inputValue);
-    } else {
-      this.props.replaceLastOperator(inputValue);
-    }
-  };
+class EqualsButton extends Component {
+  handleClick = inputValue => {};
 
   render() {
     const { inputType, value } = this.props;
@@ -35,4 +27,4 @@ export default connect(
     display: state.display
   }),
   { inputOperator, replaceLastOperator }
-)(OperatorButton);
+)(EqualsButton);

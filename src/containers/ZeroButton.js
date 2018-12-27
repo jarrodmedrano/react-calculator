@@ -10,7 +10,7 @@ class ZeroButton extends Component {
   };
 
   render() {
-    const { inputType, value, buttonType } = this.props;
+    const { inputType, value } = this.props;
 
     return (
       <div>

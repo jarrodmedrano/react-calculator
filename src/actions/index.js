@@ -9,7 +9,9 @@ import {
   INPUT_ZERO,
   MULTIPLY,
   SUBTRACT,
-  UPDATE_DISPLAY
+  UPDATE_DISPLAY,
+  REPLACE_FIRST_ZERO,
+  UPDATE_POINTER
 } from "./types";
 
 export function updateDisplay(input) {
@@ -75,6 +77,22 @@ export function inputNumber(input) {
       type: INPUT_NUMBER,
       payload: input
     };
+  };
+}
+
+export function replaceFirstZero(input) {
+  return dispatch => {
+    dispatch({
+      type: REPLACE_FIRST_ZERO,
+      payload: input
+    }).then(() => updatePointer(input));
+  };
+}
+
+export function updatePointer(input) {
+  return {
+    type: UPDATE_POINTER,
+    payload: input
   };
 }
 

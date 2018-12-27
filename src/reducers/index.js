@@ -9,10 +9,14 @@ const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.UPDATE_DISPLAY:
       return Object.assign({}, state, {
-        display: state.display.concat(action.payload),
-        pointer: state.display[state.display.length - 1]
+        display: state.display.concat(action.payload)
+        // pointer: state.display[state.display.length - 1]
       });
-
+    case types.UPDATE_POINTER:
+      return {
+        ...state,
+        pointer: state.display[state.display.length - 1]
+      };
     case types.ADD:
       return {
         ...state
@@ -37,11 +41,10 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state
       };
-    case types.BUTTON_PRESS:
+    case types.REPLACE_FIRST_ZERO:
       return {
         ...state,
-        display: [...state.display.splice(0, 1, action.payload)],
-        pointer: state.display[state.display.length - 1]
+        display: [action.payload]
       };
     case types.CLEAR:
       return initialState;

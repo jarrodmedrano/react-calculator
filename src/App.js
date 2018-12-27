@@ -14,23 +14,27 @@ class App extends Component {
       <div className="App">
         <Display />
         <div className="grid">
-          <ClearButton inputType="clear" value="AC" />
-          <OperatorButton inputType="divide" value="/" />
-          <OperatorButton inputType="multiply" value="*" />
-          <NumberButton inputType="seven" value="7" />
-          <NumberButton inputType="eight" value="8" />
-          <NumberButton inputType="nine" value="9" />
-          <OperatorButton inputType="subtract" value="-" />
-          <NumberButton inputType="four" value="4" />
-          <NumberButton inputType="five" value="5" />
-          <NumberButton inputType="six" value="6" />
-          <OperatorButton inputType="add" value="+" />
-          <NumberButton inputType="one" value="1" />
-          <NumberButton inputType="two" value="2" />
-          <NumberButton inputType="three" value="3" />
-          <ZeroButton inputType="zero" value="0" />
-          <DecimalButton inputType="decimal" value="." />
-          <EqualsButton inputType="equals" value="=" />
+          <div className="grid-2">
+            <NumberButton inputType="seven" value="7" />
+            <NumberButton inputType="eight" value="8" />
+            <NumberButton inputType="nine" value="9" />
+            <OperatorButton inputType="subtract" value="-" />
+            <NumberButton inputType="four" value="4" />
+            <NumberButton inputType="five" value="5" />
+            <NumberButton inputType="six" value="6" />
+            <OperatorButton inputType="add" value="+" />
+            <NumberButton inputType="one" value="1" />
+            <NumberButton inputType="two" value="2" />
+            <NumberButton inputType="three" value="3" />
+            <ZeroButton inputType="zero" value="0" />
+            <DecimalButton inputType="decimal" value="." />
+          </div>
+          <div>
+            <ClearButton inputType="clear" value="AC" />
+            <OperatorButton inputType="divide" value="/" />
+            <OperatorButton inputType="multiply" value="*" />
+            <EqualsButton inputType="equals" value="=" />
+          </div>
         </div>
       </div>
     );

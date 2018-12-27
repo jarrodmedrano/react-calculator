@@ -55,7 +55,7 @@ class DecimalButton extends Component {
     const { inputType, value } = this.props;
 
     return (
-      <div>
+      <div className="decimal">
         <button id={inputType} onClick={() => this.handleClick(value)}>
           {value}
         </button>

@@ -4,10 +4,8 @@
   width: 100%;
   background: #000;
   color: #fff;
-}
-
-#display > div {
   padding: .5em;
+  box-sizing: border-box;
 }
 
 .App {

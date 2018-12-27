@@ -22,28 +22,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         display: [...state.display.slice(0, -1)]
       };
-    case types.ADD:
-      return {
-        ...state
-      };
-    case types.DIVIDE:
-      return {
-        ...state
-      };
-    case types.MULTIPLY:
-      return {
-        ...state
-      };
     case types.EQUALS:
       return {
         ...state,
         display: [math.eval(state.display.join(""))]
       };
     case types.INPUT_DECIMAL:
-      return {
-        ...state
-      };
-    case types.INPUT_ZERO:
       return {
         ...state
       };

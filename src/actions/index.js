@@ -1,14 +1,9 @@
 import {
-  ADD,
   INPUT_OPERATOR,
   CLEAR,
-  DIVIDE,
   EQUALS,
   INPUT_DECIMAL,
   INPUT_NUMBER,
-  INPUT_ZERO,
-  MULTIPLY,
-  SUBTRACT,
   UPDATE_DISPLAY,
   REPLACE_FIRST_ZERO,
   UPDATE_POINTER,
@@ -40,24 +35,6 @@ export function equals() {
   };
 }
 
-export function subtract() {
-  return {
-    type: SUBTRACT
-  };
-}
-
-export function divide() {
-  return {
-    type: DIVIDE
-  };
-}
-
-export function multiply() {
-  return {
-    type: MULTIPLY
-  };
-}
-
 export function inputDecimal(input) {
   return dispatch => {
     dispatch({
@@ -66,18 +43,6 @@ export function inputDecimal(input) {
     });
     dispatch(updateDisplay(input));
     dispatch(updatePointer(input));
-  };
-}
-
-export function inputZero() {
-  return {
-    type: INPUT_ZERO
-  };
-}
-
-export function add() {
-  return {
-    type: ADD
   };
 }
 

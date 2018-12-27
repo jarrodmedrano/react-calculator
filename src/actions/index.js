@@ -15,9 +15,12 @@ import {
 } from "./types";
 
 export function updateDisplay(input) {
-  return {
-    type: UPDATE_DISPLAY,
-    payload: input
+  return dispatch => {
+    dispatch({
+      type: UPDATE_DISPLAY,
+      payload: input
+    });
+    dispatch(updatePointer(input));
   };
 }
 
@@ -72,11 +75,18 @@ export function add() {
 
 export function inputNumber(input) {
   return dispatch => {
-    dispatch(updateDisplay(input));
-    return {
+    dispatch({
       type: INPUT_NUMBER,
       payload: input
-    };
+    });
+    dispatch(updateDisplay(input));
+  };
+}
+
+export function updatePointer(input) {
+  return {
+    type: UPDATE_POINTER,
+    payload: input
   };
 }
 
@@ -85,14 +95,8 @@ export function replaceFirstZero(input) {
     dispatch({
       type: REPLACE_FIRST_ZERO,
       payload: input
-    }).then(() => updatePointer(input));
-  };
-}
-
-export function updatePointer(input) {
-  return {
-    type: UPDATE_POINTER,
-    payload: input
+    });
+    dispatch(updatePointer(input));
   };
 }
 

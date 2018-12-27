@@ -32,8 +32,11 @@ export function clear() {
 }
 
 export function equals() {
-  return {
-    type: EQUALS
+  return dispatch => {
+    dispatch({
+      type: EQUALS
+    });
+    dispatch(updatePointer());
   };
 }
 

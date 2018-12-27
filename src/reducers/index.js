@@ -1,4 +1,5 @@
 import * as types from "../actions/types";
+import math from "mathjs";
 
 const initialState = {
   display: [0],
@@ -35,7 +36,8 @@ const rootReducer = (state = initialState, action) => {
       };
     case types.EQUALS:
       return {
-        ...state
+        ...state,
+        display: [math.eval(state.display.join(""))]
       };
     case types.INPUT_DECIMAL:
       return {

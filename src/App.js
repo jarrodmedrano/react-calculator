@@ -16,7 +16,7 @@ class App extends Component {
         <div className="grid">
           <ClearButton inputType="clear" value="AC" />
           <OperatorButton inputType="divide" value="/" />
-          <OperatorButton inputType="multiply" value="x" />
+          <OperatorButton inputType="multiply" value="*" />
           <NumberButton inputType="seven" value="7" />
           <NumberButton inputType="eight" value="8" />
           <NumberButton inputType="nine" value="9" />

@@ -4,7 +4,7 @@ import { clear, updateDisplay, inputOperator, inputNumber } from "../actions";
 
 class ZeroButton extends Component {
   handleClick = inputValue => {
-    if (this.props.pointer !== 0 && this.props.display.length > 1) {
+    if (this.props.pointer !== 0 && this.props.display.length >= 1) {
       this.props.inputNumber(inputValue);
     }
   };

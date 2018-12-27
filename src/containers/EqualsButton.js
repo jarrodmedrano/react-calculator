@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { inputOperator, replaceLastOperator } from "../actions";
+import { equals } from "../actions";
 
 class EqualsButton extends Component {
-  handleClick = inputValue => {};
+  handleClick = () => {
+    this.props.equals();
+  };
 
   render() {
     const { inputType, value } = this.props;
@@ -26,5 +28,5 @@ export default connect(
     pointer: state.pointer,
     display: state.display
   }),
-  { inputOperator, replaceLastOperator }
+  { equals }
 )(EqualsButton);

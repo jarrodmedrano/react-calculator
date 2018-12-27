@@ -4,7 +4,7 @@ import { inputOperator, replaceLastOperator } from "../actions";
 
 class OperatorButton extends Component {
   handleClick = (inputValue, inputType) => {
-    const reg = new RegExp("^([+\\-x/])$");
+    const reg = new RegExp("^([+\\-*/])$");
 
     if (!reg.test(this.props.pointer)) {
       this.props.inputOperator(inputValue);

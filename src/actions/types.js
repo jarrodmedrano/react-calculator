@@ -8,3 +8,4 @@ export const SUBTRACT = 'SUBTRACT';
 export const DIVIDE = 'DIVIDE';
 export const MULTIPLY = 'MULTIPLY';
 export const EQUALS = 'EQUALS';
+export const BUTTON_PRESS = 'BUTTON_PRESS';

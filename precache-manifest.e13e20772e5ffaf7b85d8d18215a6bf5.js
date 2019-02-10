@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/react-calculator/static/js/runtime~main.a2ecf2e6.js"
   },
   {
-    "revision": "dba5d7d319ca7355c3d8801b6c06c733",
+    "revision": "7070e45c874f950ff2ebf048b7b444dc",
     "url": "/react-calculator/index.html"
   }
 ];

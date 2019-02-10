@@ -1,17 +1,19 @@
 import React, { Component } from "react";
 import "./App.css";
-import Display from "./containers/Display";
-import OperatorButton from "./containers/OperatorButton";
-import NumberButton from "./containers/NumberButton";
-import ClearButton from "./containers/ClearButton";
-import ZeroButton from "./containers/ZeroButton";
-import DecimalButton from "./containers/DecimalButton";
-import EqualsButton from "./containers/EqualsButton";
+import Display from "./components/Display";
+import OperatorButton from "./components/OperatorButton";
+import NumberButton from "./components/NumberButton";
+import ClearButton from "./components/ClearButton";
+import ZeroButton from "./components/ZeroButton";
+import DecimalButton from "./components/DecimalButton";
+import EqualsButton from "./components/EqualsButton";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        <h1>React Calculator</h1>
+
         <Display />
         <div className="grid">
           <div className="grid-2">

@@ -13,6 +13,17 @@
   margin: 0 auto;
 }
 
+@media screen and (max-width: 992px) {
+  .App {
+    max-width: 100%;
+  }
+
+  h1 {
+    padding: 1em;
+    text-align: center;
+  }
+}
+
 .grid {
   display: grid;
   grid-template-columns: 1fr 25%;
